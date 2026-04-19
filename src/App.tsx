@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mic, MicOff, Camera, Video, Download, Square, Shield, Ghost, Cpu, Scan, Zap, Settings, Link as LinkIcon, Image as ImageIcon } from 'lucide-react';
