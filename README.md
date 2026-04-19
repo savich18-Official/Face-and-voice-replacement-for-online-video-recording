@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎭 PHANTOM CRYPT v2.0
+# 🎭 PHANTOM CRYPT v1.0
 ### Face and Voice Replacement for Online Video Recording
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-51.6%25-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
