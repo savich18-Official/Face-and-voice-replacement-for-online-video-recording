@@ -7,7 +7,7 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
-  // Proxy endpoint to bypass CORS and prevent canvas tainting
+
   app.get("/api/proxy", async (req, res) => {
     const targetUrl = req.query.url as string;
     if (!targetUrl) {
@@ -34,12 +34,11 @@ async function startServer() {
     }
   });
 
-  // Health check
+
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok" });
   });
 
-  // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
