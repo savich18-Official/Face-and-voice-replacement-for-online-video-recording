@@ -1,8 +1,4 @@
 
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
 
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -40,7 +36,7 @@ export default function App() {
   const smoothDetectionsRef = useRef<{ x: number, y: number, w: number, h: number } | null>(null);
   const recordedChunksRef = useRef<Blob[]>([]);
 
-  // Load Neural Models once
+
   useEffect(() => {
     const loadModels = async () => {
       setStatus("ЗАГРУЗКА_МОДЕЛЕЙ...");
@@ -56,7 +52,7 @@ export default function App() {
     loadModels();
   }, []);
 
-  // Handle Asset Loading
+
   useEffect(() => {
     const loadAssets = () => {
       const face = new Image();
@@ -75,7 +71,7 @@ export default function App() {
     loadAssets();
   }, [faceMaskUrl, backgroundUrl]);
 
-  // Tracking Loop (Throttled for performance)
+
   useEffect(() => {
     if (!isCameraActive || !modelsLoaded) return;
 
@@ -110,7 +106,7 @@ export default function App() {
     return () => { isRunning = false; };
   }, [isCameraActive, modelsLoaded]);
 
-  // Compositing Loop
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -296,7 +292,7 @@ export default function App() {
       <div className="scanline" />
       <div className="noise" />
       
-      {/* Background Glow */}
+      
       <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-green-500/10 blur-[100px] rounded-full" />
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-500/10 blur-[100px] rounded-full" />
@@ -326,7 +322,7 @@ export default function App() {
       <main className="flex-1 w-full max-w-7xl px-8 pb-8 flex flex-col lg:flex-row gap-8 min-h-0 overflow-hidden relative">
         <video ref={videoRef} playsInline muted autoPlay className="hidden" />
         
-        {/* Left Control Panel */}
+
         <div className="lg:w-72 flex flex-col gap-6 shrink-0 z-10">
           <div className="hud-panel p-6 space-y-6">
             <div>
