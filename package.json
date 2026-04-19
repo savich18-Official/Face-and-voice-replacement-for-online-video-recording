@@ -1,9 +1,0 @@
-{
-  "name": "Phantom Crypt",
-  "description": "Anonymous video recording with face replacement and voice modulation.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ],
-  "majorCapabilities": []
-}
